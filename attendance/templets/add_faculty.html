@@ -1,0 +1,45 @@
+{% extends 'index.html'%}
+{% block content %}
+<h3 class=" text-center text-primary">Faculty Registration Form</h3>
+<div class="container" align='center'>
+<form  method="POST">
+    {% csrf_token %}
+
+    <table class=" table" align="center">
+      <!--<tr>
+        <td> <label>Student ID:</label></td>
+        <td> {{form.std_id}}</td>
+      </tr>-->
+      <tr>
+        <td><label>Faculty Name:</label></td>
+        <td>{{form.name}}</td>
+      </tr>
+     <tr>
+       <td> <label>Faculty Address:</label></td>
+       <td>{{form.address}}</td>
+     </tr>
+     <tr>
+        <td><label>Faculty Phone:</label></td>
+        <td>{{form.phone}}</td>
+     </tr>
+     <tr>
+       <td><label>Faculty Email:</label></td>
+       <!--<td> {{form.email}}</td>-->
+       <td><input type="email" name="email"></td>
+     </tr>
+     <tr>
+       <td><label>Faculty Password:</label></td>
+       <td><input type="password" name="password"></td>
+      <!-- <td>{{form.password}}</td>-->
+     </tr>   
+    </table>
+    <!--<h3 class=" text-center text-primary">Student Registration Form</h3>
+    <table>
+    {{form.as_table}}
+    </table>-->
+    <div align='center'>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+  </form>
+</div>
+{%endblock content%}

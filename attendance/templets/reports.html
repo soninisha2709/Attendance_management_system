@@ -1,0 +1,47 @@
+{% extends 'index.html'%}
+{% block content %}
+<html>
+    <h1 class=" text-info" align="center">Student Reports</h1><br><br><hr>
+    <div class="container" align='center'>
+    <form action="/student_report/" method="POST" target="_blank">
+        {%csrf_token%}
+        <table>
+            <tr>
+   <td> <label>Sem : </label></td>    
+   <td><input type="text" name='sem'></td></tr> 
+   <tr>
+       <td>
+    <label>Subject ID : </label> </td>
+    <td>  
+    <input type="text" name='sub'></td>
+</tr>
+</table><br><br>
+<button class="btn btn-primary btn-user">
+    Report
+  </button>
+
+</form>
+    <br><br><hr>    
+</div>
+<br>
+<br>
+    <h1 class=" text-info" align="center">Faculty Reports</h1><br><br><hr>
+    <div class="container" align='center'>
+        <form action="/faculty_report/" method="POST" target="_blank">
+            {%csrf_token%}
+            <table>
+                <tr>
+       <td> <label>Faculty ID :  </label></td>    
+       <td><input type="text" name='fid'></td></tr> 
+           </table><br><br>
+    <button class="btn btn-primary btn-user">
+        Report
+      </button>
+    
+    </form>
+        <br><br><hr>    
+    </div>
+    <br>
+    <br>
+</html>
+{%endblock%}

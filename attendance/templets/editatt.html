@@ -1,0 +1,35 @@
+{% extends 'index.html'%}
+{% block content %}
+<h3 class=" text-center text-primary">Edit Subject</h3>
+<form method="POST" action="/update_att/{{form.att_id}}">
+    {% csrf_token %}
+    
+    <table class=" table" align="center">
+        <tr>
+          <td> <label>Attendance ID:</label></td>
+          <td><input type="hidden" class="form-control" name="att_id" value="{{form.att_id}}"></td>
+        </tr>
+        <tr>
+          <td><label>Sem ID:</label></td>
+          <td><input type="text" class="form-control" name="sem"  value="{{form.sem}}"></td>
+        </tr>
+        <tr>
+          <td><label>Student ID:</label></td>
+          <td><input type="text" class="form-control" name="std"  value="{{form.std}}"></td>
+        </tr>
+        <tr>
+          <td><label>Subject ID:</label></td>
+          <td><input type="text" class="form-control" name="sub"  value="{{form.sub}}"></td>
+        </tr>
+        <tr>
+            <td><label>Faculty ID:</label></td>
+            <td><input type="text" class="form-control" name="faculty"  value="{{form.faculty}}"></td>
+          </tr>
+      </table>
+  
+
+    <div align='center'>
+    <button type="submit" class="btn btn-primary">Update</button>
+</div>
+  </form>
+{%endblock content%}

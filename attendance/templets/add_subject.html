@@ -1,0 +1,35 @@
+{% extends 'index.html'%}
+{% block content %}
+<h3 class=" text-center text-primary">Add Subject</h3>
+<div class="container" align='center'>
+<form  method="POST">
+    {% csrf_token %}
+
+    <table class=" table" align="center">
+      <!--<tr>
+        <td> <label>Student ID:</label></td>
+        <td> {{form.std_id}}</td>
+      </tr>-->
+      <tr>
+        <td><label>Subject Name:</label></td>
+        <td>{{form.sub_name}}</td>
+      </tr>
+      <tr>
+        <td><label>Faculty ID:</label></td>
+        <td>{{form.faculty}}</td>
+      </tr>
+      <tr>
+        <td><label>Semester:</label></td>
+        <td>{{form.sem}}</td>
+      </tr>
+    </table>
+    <!--<h3 class=" text-center text-primary">Student Registration Form</h3>
+    <table>
+    {{form.as_table}}
+    </table>-->
+    <div align='center'>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+  </form>
+</div>
+{%endblock content%}

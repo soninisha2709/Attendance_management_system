@@ -1,0 +1,46 @@
+{% extends 'index.html'%}
+{% block content %}
+<form method="POST" action="/update_std/{{form.std_id}}">
+    {% csrf_token %}
+    <h3 class=" text-center text-primary">Edit Student</h3>
+    <table class=" table" align="center">
+        <tr>
+          <td> <label>Student ID:</label></td>
+          <td><input type="hidden" class="form-control" name="id" aria-describedby="emailHelp" value="{{form.std_id}}"></td>
+        </tr>
+        <tr>
+          <td><label>Student Roll no:</label></td>
+          <td><input type="text" class="form-control" name="Roll_no" aria-describedby="emailHelp" value="{{form.Roll_no}}"></td>
+        </tr>
+        <tr>
+          <td><label>Student Name:</label></td>
+          <td><input type="text" class="form-control" name="name" aria-describedby="emailHelp" value="{{form.name}}"></td>
+        </tr>
+       <tr>
+         <td> <label>Student Address:</label></td>
+         <td><input type="text" class="form-control" name="address" aria-describedby="emailHelp" value="{{form.address}}"></td>
+       </tr>
+       <tr>
+          <td><label>Student Phone:</label></td>
+          <td><input type="text" class="form-control" name="phone" aria-describedby="emailHelp" value="{{form.phone}}"></td>
+       </tr>
+       <tr>
+         <td><label>Student Email:</label></td>
+         <td><input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="{{form.email}}"></td>
+       </tr>
+       <tr>
+         <td><label>Student Password:</label></td>
+         <td><input type="password" class="form-control" name="password" aria-describedby="emailHelp" value="{{form.password}}"></td>
+       </tr>
+       <tr>
+        <td><label>Student Semester:</label></td>
+        <td><input type="text" class="form-control" name="s_sem" aria-describedby="emailHelp" value="{{form.s_sem}}"></td>
+      </tr>   
+      </table>
+  
+
+    <div align='center'>
+    <button type="submit" class="btn btn-primary">Update</button>
+</div>
+  </form>
+{%endblock content%}

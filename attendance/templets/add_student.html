@@ -1,0 +1,52 @@
+{% extends 'index.html'%}
+{% block content %}
+<h3 class=" text-center text-primary">Student Registration Form</h3>
+<div class="container" align='center'>
+<form  method="POST">
+    {% csrf_token %}
+
+    <table class=" table" align="center">
+      <!--<tr>
+        <td> <label>Student ID:</label></td>
+        <td> {{form.std_id}}</td>
+      </tr>-->
+      <tr>
+        <td><label>Student Roll no:</label></td>
+        <td>{{form.Roll_no}}</td>
+      </tr>
+      <tr>
+        <td><label>Student Name:</label></td>
+        <td>{{form.name}}</td>
+      </tr>
+     <tr>
+       <td> <label>Student Address:</label></td>
+       <td>{{form.address}}</td>
+     </tr>
+     <tr>
+        <td><label>Student Phone:</label></td>
+        <td><input type="phone" name="phone"></td>
+     </tr>
+     <tr>
+       <td><label>Student Email:</label></td>
+       <td><input type="email" name="email"></td>
+     </tr>
+     <tr>
+       <td><label>Student Password:</label></td>
+       <td><input type="password" name="password"></td>
+       <!--<td>{{form.password}}</td>-->
+     </tr> 
+     <tr>
+      <td><label>Student Semester:</label></td>
+      <td> {{form.s_sem}}</td>
+    </tr>
+    </table>
+    <!--<h3 class=" text-center text-primary">Student Registration Form</h3>
+    <table>
+    {{form.as_table}}
+    </table>-->
+    <div align='center'>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+  </form>
+</div>
+{%endblock content%}
